@@ -1,0 +1,553 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar{
+    background-color: black;
+    width: 100%;
+    height: 3rem;
+    padding: 7px;
+}
+
+   .navbar-list{
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+}
+
+.navbar-list li{
+    list-style-type: none;
+   }
+
+.navbar-list li a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.navbar-list li a:hover{
+    color: rgb(247, 241, 47);
+    text-decoration: underline;
+}
+
+.navbar img{
+     height: 2rem;
+     width: 2rem;
+     background-color: rgb(246, 243, 243);
+     padding: 3px;
+     border-radius: 5px;
+     position: absolute;
+     right: 10px;
+     display: none;
+     
+}
+
+#bar_btn{
+  display: none;
+}
+.header {
+    height: 170px;
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    grid-template-areas: "headline headline";
+    align-items: end;
+    position: relative;
+    overflow: hidden;
+    background-color: #6d17cf;
+}
+main>section {
+    padding: 3em 0;
+}
+
+.about{
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 6fr;
+    grid-template-areas:
+        "headline figure"
+        "headline content";
+    padding-top: 1.5em;
+   
+}
+
+
+.about-heading{
+    grid-area: headline;
+    transform: rotate(180deg);
+    position: sticky;
+    top: 40vh;
+    writing-mode: vertical-rl;
+    place-self: center;
+    /* text-align: center;
+    width:20%;
+    font-size: 2rem;
+    margin-top: 20%;
+    position: sticky;*/
+} 
+
+.about-img{
+    grid-area: figure;
+    display: grid;
+    place-items: center;
+    /* width: 250px;
+    height: 250px; */
+}
+
+.about-img img{
+    box-sizing: content-box;
+    width: 70%;
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;
+    top: -75px;
+}
+
+.about-content{
+    grid-area: content;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em;
+    padding-right: 3em;
+    position: relative;
+    top: calc(-75px * 0.5);
+    /* width: 35%;
+    margin-left: 50px;
+    font-size: 1.5rem; */
+}
+h2{
+    font-size: 2.5rem;
+    color: rgb(71, 18, 156);
+}
+
+ h3{
+    text-transform: uppercase;
+    font-weight: 600;
+    padding-bottom: 2rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+
+.about-content p{
+    padding-bottom: 2rem;
+    line-height: 1.5;
+    max-width: 40rem;
+    font-size: 1.3rem;
+}
+
+.about-btn{
+    background-color: rgb(71, 18, 156);
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    align-self: center;
+    text-decoration: none;
+    font-weight: 900;
+}
+
+.about-btn:hover{
+    color:rgb(71, 18, 156) ;
+    background-color: white;
+    border: 5px solid rgb(71, 18, 156);
+    transition: transform 300ms 50ms ease-out;
+}
+
+.KnowHow .headline--active {
+    color: white;
+    background-color: rgb(71, 18, 156);
+    opacity: 1
+}
+
+.card-hidden {
+    transform: scale(1, 0)
+}
+
+.d-none {
+    display: none
+}
+
+
+
+.KnowHow {
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    grid-template-areas: "headline devh" "headline dev" "headline devskills1" "headline devskills2" "headline photoh" "headline photo" "headline photoskills1" "headline photoskills2" "headline physich" "headline physic" "headline physicskills1" "headline physicskills2";
+    align-items: start
+}
+
+.KnowHow p{
+    padding-bottom: 2rem;
+    line-height: 1.5;
+    max-width: 40rem;
+    font-size: 1.3rem;
+}
+@media screen and (min-width: 1200px) {
+    .KnowHow {
+        grid-template-columns:2fr 3fr 12fr 3fr 8fr 1fr 7fr 5fr 6fr 2fr 19fr 2fr
+    }
+
+    .KnowHow {
+        grid-template-areas:"... devh devh devh headline photoh photoh photoh photoh ... physich ..." "... dev dev dev headline photo photo photo photo ... physic ..."
+    }
+}
+
+.KnowHow h3 {
+    background-color: #e6e6e7;
+    color: rgba(41,40,38,0.6);
+    padding: 1.5em;
+    margin-right: 1.5em;
+    box-shadow: 3px 3px 7px rgba(0,0,0,0.2),-3px -3px 7px rgba(255,255,255,0.4);
+    cursor: pointer;
+    transition: transform 300ms 50ms ease-out, opacity 300ms 50ms ease-out;
+    opacity: 0.7
+}
+
+@media screen and (min-width: 1200px) {
+    .KnowHow h3 {
+        margin:0
+    }
+}
+
+.KnowHow h3:hover {
+    transform: scale(1.05);
+    opacity: 1
+}
+
+@media screen and (max-width: calc(1200px - 1px)) {
+    .KnowHow h3:not(:first-of-type) {
+        margin-top:1.5em
+    }
+}
+
+.KnowHow .card {
+    transform-origin: top;
+    transition: transform 500ms 50ms;
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: calc(1200px - 1px)) {
+    .KnowHow .card {
+        padding-bottom:0
+    }
+}
+
+.KnowHow__header {
+    grid-area: headline;
+    place-self: start center;
+    text-orientation: mixed;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    position: sticky;
+    top: 40vh
+}
+
+.KnowHow__WebDev__headline {
+    grid-area: devh
+}
+
+.KnowHow__WebDev__text {
+    grid-area: dev;
+    height: auto;
+    background-color: white;
+    padding: 1.5em;
+    box-shadow: 3px 3px 7px rgba(0,0,0,0.2),-3px -3px 7px rgba(255,255,255,0.4);
+    margin: 0 1.5em 1.5em 0
+}
+
+@media screen and (min-width: 1200px) {
+    .KnowHow__WebDev__text {
+        margin:0
+    }
+}
+
+.KnowHow__WebDev__skills1 {
+    grid-area: devskills1
+}
+
+@media screen and (min-width: 1200px) {
+    .KnowHow__WebDev__skills1 {
+        grid-area:photo
+    }
+}
+
+.KnowHow__WebDev__skills2 {
+    grid-area: devskills2
+}
+
+@media screen and (min-width: 1200px) {
+    .KnowHow__WebDev__skills2 {
+        grid-area:physic
+    }
+}
+
+.KnowHow__Photo__headline {
+    grid-area: photoh
+}
+
+.KnowHow__Photo__text {
+    grid-area: photo;
+    height: auto;
+    background-color: white;
+    padding: 1.5em;
+    box-shadow: 3px 3px 7px rgba(0,0,0,0.2),-3px -3px 7px rgba(255,255,255,0.4);
+    margin: 0 1.5em 1.5em 0
+}
+
+@media screen and (min-width: 1200px) {
+    .KnowHow__Photo__text {
+        margin:0
+    }
+}
+
+.KnowHow__Photo__skills1 {
+    grid-area: photoskills1
+}
+
+@media screen and (min-width: 1200px) {
+    .KnowHow__Photo__skills1 {
+        grid-area:dev
+    }
+}
+
+.KnowHow__Photo__skills2 {
+    grid-area: photoskills2
+}
+
+@media screen and (min-width: 1200px) {
+    .KnowHow__Photo__skills2 {
+        grid-area:physic
+    }
+}
+
+.KnowHow__Physics__headline {
+    grid-area: physich
+}
+
+.KnowHow__Physics__text {
+    grid-area: physic;
+    height: auto;
+    background-color: white;
+    padding: 1.5em;
+    box-shadow: 3px 3px 7px rgba(0,0,0,0.2),-3px -3px 7px rgba(255,255,255,0.4);
+    margin: 0 1.5em 1.5em 0
+}
+
+@media screen and (min-width: 1200px) {
+    .KnowHow__Physics__text {
+        margin:0
+    }
+}
+
+.KnowHow__Physics__skills1 {
+    grid-area: physicskills1
+}
+
+@media screen and (min-width: 1200px) {
+    .KnowHow__Physics__skills1 {
+        grid-area:dev
+    }
+}
+
+.KnowHow__Physics__skills2 {
+    grid-area: physicskills2
+}
+
+@media screen and (min-width: 1200px) {
+    .KnowHow__Physics__skills2 {
+        grid-area:photo
+    }
+}
+
+.KnowHow .skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-right: 1.5em
+}
+
+@media screen and (min-width: 1200px) {
+    .KnowHow .skills {
+        margin-right:0;
+        margin-top: 1.5em;
+        opacity: 0;
+        transition: opacity 300ms 50ms
+    }
+}
+
+.KnowHow .skill--active {
+    opacity: 1
+}
+
+@media screen and (max-width: calc(1200px - 1px)) {
+    .KnowHow .skill--active {
+        box-shadow:3px 3px 7px rgba(0,0,0,0.2),-3px -3px 7px rgba(255,255,255,0.4)
+    }
+}
+
+.KnowHow .d-none {
+    display: none
+}
+
+.KnowHow figure {
+    height: auto;
+    background-color: white;
+    padding: 1.5em;
+    box-shadow: 3px 3px 7px rgba(0,0,0,0.2),-3px -3px 7px rgba(255,255,255,0.4);
+    margin: 0 1.5em 1.5em 0;
+    position: relative;
+    text-align: center;
+    margin: 0;
+    flex-basis: 45%;
+    flex-grow: 1
+}
+
+@media screen and (min-width: 1200px) {
+    .KnowHow figure {
+        margin:0
+    }
+}
+
+@media screen and (max-width: calc(1200px - 1px)) {
+    .KnowHow figure {
+        box-shadow:none
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .KnowHow figure {
+        flex-basis:25%
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .KnowHow figure {
+        flex-basis:45%;
+        flex-grow: 0;
+        margin-top: 3em
+    }
+}
+
+.KnowHow svg {
+    fill: #292826;
+    width: 60px;
+    height: 60px
+}
+
+@media screen and (min-width: 1200px) {
+    .KnowHow svg {
+        width:auto;
+        height: 100px
+    }
+}
+
+.KnowHow figcaption {
+    text-align: center;
+    transition: transform 500ms 50ms
+}
+
+@media screen and (min-width: 1200px) {
+    .KnowHow figcaption {
+        position:absolute;
+        bottom: 10px;
+        left: 0;
+        width: 100%;
+        transform-origin: top;
+        transform: scale(1, 0)
+    }
+}
+
+.KnowHow figure:hover figcaption {
+    transform: scale(1, 1)
+}
+
+.KnowHow figure:hover svg {
+    fill: #01069b
+}
+
+
+
+
+@media screen and (max-width: 768px){
+   .navbar img{
+    display: block;
+   }
+
+   #bar_btn:checked ~ .navbar-list{
+      display: block;
+   }
+   .navbar-list{
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    
+    width: 100%;
+    background-color: black;
+    color: white;
+    top: 40px;
+   }
+
+   .navbar-list li{
+    text-align: center;
+    margin: 0;
+    padding:1rem 0;
+   }
+}
+
+
+@media screen and (min-width: 1200px){
+    .about {
+    grid-template-areas: "... ... headline figure figure figure ... content content content content ... ";
+}
+
+
+}
+@media screen and (min-width: 900px){ 
+
+    h2{
+        font-size: 2.5rem;
+    }
+ 
+    .about {
+         grid-template-areas: "... ... headline figure figure figure ... content content content content ... ";
+         grid-template-columns: 2fr 3fr 12fr 3fr 8fr 1fr 7fr 5fr 6fr 2fr 19fr 2fr;
+} 
+ .about-img img {
+    width: 100%;
+    border: none;
+    box-sizing: border-box;
+    position: static;
+}
+
+}
+
+@media screen and (min-width: 900px) and (max-width: calc(1799px)){
+    .about__heading {
+    align-self: start;
+    padding-bottom: calc(0.5em * 2);
+    position: sticky;
+    top: 13vh;
+}
+.about-img {
+    align-items: start;
+    padding-top: 3em;
+}
+}
+
+
+@media screen and (min-width: 600px){
+    h2{
+        font-size: 2.25rem;
+    }
+   .about-content {
+    position: static;
+} 
+
+}
+
+
